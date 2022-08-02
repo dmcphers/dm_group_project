@@ -1,1 +1,1 @@
-# dm_solo_project
+# dm_group_project

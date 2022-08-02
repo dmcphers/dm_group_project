@@ -1,7 +1,7 @@
 import {By} from "selenium-webdriver"
 import {BasePage} from "./basePage"
 
-export class Google extends BasePage {
+export class GBC extends BasePage {
     searchBar: By = By.xpath('//input[@placeholder="Search subjects, styles, colors..."]')
     results: By = By.xpath('//div[@class="results"]')
     header: By = By.xpath('//div[@class="col-12 col-md"]')
@@ -17,9 +17,7 @@ export class Google extends BasePage {
     registerVerifyPasswordInput: By = By.id("register-password-2")
     registerAccountBtn: By = By.xpath('//a[text()="Register A New Account"]')
     trackingIcon: By = By.xpath('//div[@class="truck icon d-none d-lg-block"]')
-    //trackingInput: By = By.xpath('(//div[@class="field"])[0]')
     trackingInput: By = By.xpath('(//input[@type="text"])[2]')
-    //const trackingInput = locateWith(By.tagName('input')).near(By.xpath('//label[text()="Order Number")')
     trackOrderButton: By = By.xpath('//button[text()="Track Order"]')
     itemToPurchase: By = By.xpath('//a[@href="/view/labrador-dogs-in-the-back-of-a-vintage-truck,2341297/"]')
     printSelection: By = By.className('size s')

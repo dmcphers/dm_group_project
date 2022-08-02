@@ -1,16 +1,16 @@
-import {Google} from './gbcPO'
+import {GBC} from './gbcPO'
 import { Driver } from 'selenium-webdriver/chrome'
 const fs = require('fs')
-const google = new Google()
+const gbc = new GBC()
 
 
 
 test('do a search', async () => {
-    await google.navigate()
-    await google.search('Dog')
-    let text = await google.getResults()
-    await google.driver.sleep(5000);
-    await google.click(google.popupObject)
+    await gbc.navigate()
+    await gbc.search('Dog')
+    let text = await gbc.getResults()
+    await gbc.driver.sleep(5000);
+    await gbc.click(gbc.popupObject)
     expect(text).toContain('Dog')
 })
 
@@ -18,18 +18,18 @@ test('do a search', async () => {
 
 /*
 test('register user', async () => {
-    await google.navigate()
-    await google.clickAccountIcon()
-    await google.clickRegisterNewBtn()
-    await google.registerFirstName('dmtestl')
-    await google.registerLastName('userl')
-    await google.registerEmail('dmtestuserl@dmtest.com')
-    await google.clickAccountType()
-    await google.registerPassword('dm12345')
-    await google.registerVerifyPassword('dm12345')
-    await google.clickRegisterBtn()
-    //let text = await google.getHeader()
-    await google.driver.sleep(5000);
+    await gbc.navigate()
+    await gbc.clickAccountIcon()
+    await gbc.clickRegisterNewBtn()
+    await gbc.registerFirstName('dmtestl')
+    await gbc.registerLastName('userl')
+    await gbc.registerEmail('dmtestuserl@dmtest.com')
+    await gbc.clickAccountType()
+    await gbc.registerPassword('dm12345')
+    await gbc.registerVerifyPassword('dm12345')
+    await gbc.clickRegisterBtn()
+    //let text = await gbc.getHeader()
+    await gbc.driver.sleep(5000);
     //expect(text).toContain('Hello, dmtestj!')
 })
 */
@@ -37,12 +37,12 @@ test('register user', async () => {
 
 /*
 test('login', async () => {
-    await google.navigate()
-    await google.clickAccountIcon()
-    await google.loginEmail('sharolynshimer@gmail.com')
-    await google.loginPassword('Devmountain!')
-    let text = await google.getHeader()
-    await google.driver.sleep(5000)
+    await gbc.navigate()
+    await gbc.clickAccountIcon()
+    await gbc.loginEmail('sharolynshimer@gmail.com')
+    await gbc.loginPassword('Devmountain!')
+    let text = await gbc.getHeader()
+    await gbc.driver.sleep(5000)
     expect(text).toContain('Hello, Team 4!')
 })
 */
@@ -52,22 +52,22 @@ test('login', async () => {
 /*
 
 test('add to cart', async () => {
-    await google.navigate()
-    await google.clickAccountIcon()
-    await google.loginEmail('sharolynshimer@gmail.com')
-    await google.loginPassword('Devmountain!')
-    await google.driver.sleep(5000)
-    await google.search('Dog')
-    await google.driver.sleep(5000)
-    await google.click(google.popupObject)
-    await google.clickItemToPurchase()
-    await google.driver.sleep(5000)
-    //await google.driver.sleep(5000)
-    //await google.click(google.popupObject)
-    await google.clickAddToCartButton()
-    await google.driver.sleep(5000)
-    await google.click(google.viewCart)
-    await google.driver.sleep(5000)
+    await gbc.navigate()
+    await gbc.clickAccountIcon()
+    await gbc.loginEmail('sharolynshimer@gmail.com')
+    await gbc.loginPassword('Devmountain!')
+    await gbc.driver.sleep(5000)
+    await gbc.search('Dog')
+    await gbc.driver.sleep(5000)
+    await gbc.click(gbc.popupObject)
+    await gbc.clickItemToPurchase()
+    await gbc.driver.sleep(5000)
+    //await gbc.driver.sleep(5000)
+    //await gbc.click(gbc.popupObject)
+    await gbc.clickAddToCartButton()
+    await gbc.driver.sleep(5000)
+    await gbc.click(gbc.viewCart)
+    await gbc.driver.sleep(5000)
 })
 */
 
@@ -76,41 +76,39 @@ test('add to cart', async () => {
 
 /*
 test('track order', async () => {
-    await google.navigate()
-    await google.clickAccountIcon()
-    await google.loginEmail('sharolynshimer@gmail.com')
-    await google.loginPassword('Devmountain!')
-    await google.driver.sleep(5000)
-    await google.clickTrackingIcon()
-    await google.driver.sleep(5000)
+    await gbc.navigate()
+    await gbc.clickAccountIcon()
+    await gbc.loginEmail('sharolynshimer@gmail.com')
+    await gbc.loginPassword('Devmountain!')
+    await gbc.driver.sleep(5000)
+    await gbc.clickTrackingIcon()
+    await gbc.driver.sleep(5000)
     
-    await google.click(google.popupObject)
-    await google.driver.sleep(5000)
+    await gbc.click(gbc.popupObject)
+    await gbc.driver.sleep(5000)
 
-    //await google.orderTrackingInput('123456789')
-    await google.clickTrackOrderButton()
-    await google.driver.sleep(5000)
+    //await gbc.orderTrackingInput('123456789')
+    await gbc.clickTrackOrderButton()
+    await gbc.driver.sleep(5000)
 })
 */
 
 
-
-//G4CP-30: To test if user account is getting disabled after multiple invalid sign in attempts.
 /*
 test(' Invalid login attempts', async () => {
-    await google.navigate()
-    await google.clickAccountIcon()
+    await gbc.navigate()
+    await gbc.clickAccountIcon()
     for (var i=0; i<= 6; i++) {
-    await google.loginEmail('h10@t.com')
-    await google.loginPassword('123456')
+    await gbc.loginEmail('h10@t.com')
+    await gbc.loginPassword('123456')
     }
-    let text = await google.findErrorMessage()
-    await google.driver.sleep(1000)
+    let text = await gbc.findErrorMessage()
+    await gbc.driver.sleep(1000)
     expect(text).toContain("Sorry, you've tried too many times. Please try again later.")
-    await google.driver.sleep(5000);
+    await gbc.driver.sleep(5000);
 })
 */
 
 afterAll(async () => {
-    await google.driver.quit()
+    await gbc.driver.quit()
 })
